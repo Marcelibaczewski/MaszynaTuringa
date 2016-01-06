@@ -11,19 +11,22 @@ public class Sign {
         current = false;
         sign = i;
     }
-    public char getSign() {
-        return sign;
-    }
+
+    public char getSign() {return sign;}
+
     public void setSign(char a) {sign = a;}
+
     public boolean isCurrent() {return current;}
-    public void flipCurrent() {current=!current;}
+
+    public void flipCurrent() {current = !current;}
 
     public String construct() {
         String output = "";
         output += '|';
         if (current) {
-            output += 'q';
-            output += Main.currentState;
+            output += "<q";
+            output += Main.stateAndPos[0];
+            output += ">";
         }
         output += sign;
         output += '|';

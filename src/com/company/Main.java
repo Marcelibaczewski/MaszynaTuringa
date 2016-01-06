@@ -8,11 +8,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static int currentState= 0;
-    static int currentPosition= 0;
-    public static void main(String[] args) {
+    static int stateAndPos[] = new int[2];
+    static int currentState = 0;
+    static int currentPosition = 0;
 
-        Transformer[] transformers=new Transformer[]{
+    public static void main(String[] args) {
+        stateAndPos[0] = 0;
+        stateAndPos[1] = 0;
+        Transformer[] transformers = new Transformer[]{
                 //q0
                 new Transformer(new Triple(1, 'B', 'P'), new Triple(5, 'B', 'P'), new Triple()),
                 //q1
@@ -29,8 +32,7 @@ public class Main {
                 new Transformer(new Triple(), new Triple(), new Triple())
         };
         //7 elements- 7 states
-
-        BitParser bits= new BitParser();
+        BitParser bits = new BitParser();
         System.out.println("Marceli Baczewski- Maszyna Turinga");
         System.out.println("Opis maszyny:");
         //*pink panther*
@@ -41,8 +43,6 @@ public class Main {
         System.out.println("Prosze podac m i n- liczby wejsciowe");
         int m = new Scanner(System.in).nextInt();
         int n = new Scanner(System.in).nextInt();
-
-
         ArrayList<Sign> signs = new ArrayList<>();
         for (int i = 0; i < m; i++) {
             signs.add(new Sign('0'));
@@ -52,21 +52,14 @@ public class Main {
             signs.add(new Sign('0'));
         }
         signs.get(0).flipCurrent();//initiating
-        boolean end=false;
-        while(!end){
+        boolean end = false;
+        while (!end) {
 
-            transformers[currentState].transform(signs, currentPosition, currentState,bits);
-            if(currentState==100){
-                end=true;
+            stateAndPos = transformers[stateAndPos[0]].transform(signs, stateAndPos, bits);
+            if (stateAndPos[0] == 100) {
+                end = true;
             }
 
         }
-
-
-
-
-
-
-
     }
 }
