@@ -11,7 +11,6 @@ public class Main {
     static int stateAndPos[] = new int[2];
     static int currentState = 0;
     static int currentPosition = 0;
-
     public static void main(String[] args) {
         stateAndPos[0] = 0;
         stateAndPos[1] = 0;
@@ -34,12 +33,16 @@ public class Main {
         //7 elements- 7 states
         BitParser bits = new BitParser();
         System.out.println("Marceli Baczewski- Maszyna Turinga");
-        System.out.println("Opis maszyny:");
-        //*pink panther*
-        //TODO
-        //TODO
-        //TODO TODO TODO TODO
-        //TODOOOOO
+        System.out.println("Opis maszyny: ");
+        System.out.println("?	    0	     1	      B");
+        System.out.println("q0  (q1,B,P) (q5,B,P)     -");
+        System.out.println("q1  (q1,0,P) (q2,1,P)     -");
+        System.out.println("q2  (q3,1,L) (q2,1,P) (q4,B,L)");
+        System.out.println("q3  (q3,0,L) (q3,1,L) (q0,B,P)");
+        System.out.println("q4  (q4,0,L) (q4,B,L) (q6,0,P)");
+        System.out.println("q5  (q5,B,P) (q5,B,P) (q6,B,P)");
+        System.out.println("q6     ---      ---      ---");
+        System.out.println();
         System.out.println("Prosze podac m i n- liczby wejsciowe");
         int m = new Scanner(System.in).nextInt();
         int n = new Scanner(System.in).nextInt();

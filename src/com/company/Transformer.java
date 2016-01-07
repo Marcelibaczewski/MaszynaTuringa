@@ -35,29 +35,29 @@ public class Transformer {
         System.out.println(bitParser.printBits(signs));
         Triple chosen = choose(signs);
         if (chosen.getSign() == '-') {
-            System.out.println("Roznica wlasciwa wynosi" + bitParser.count(signs));
+            System.out.println("Zatrzymanie automatu");
+            System.out.println("Roznica wlasciwa wynosi: " + bitParser.count(signs));
             tmp[0] = 100;
             tmp[1] = 100;
             return tmp;
-        }
+        }//adding blank sign if reaching the end of input chain
         if (currentPosition == signs.size() - 1 && chosen.getDirection() == 'P') {
             signs.add(new Sign('B'));
         }
-
+        //switching sign
         (signs.get(currentPosition)).setSign(chosen.getSign());
-        //
+        //going left
         if (chosen.getDirection() == 'L') {
             signs.get(currentPosition).flipCurrent();
             signs.get(currentPosition - 1).flipCurrent();
-            currentPosition -= 1;
-        }
+            currentPosition--;
+        }//going right
         if (chosen.getDirection() == 'P') {
             signs.get(currentPosition).flipCurrent();
             signs.get(currentPosition + 1).flipCurrent();
-            currentPosition += 1;
-        }
+            currentPosition++;
+        }//changing a current state
         currentState = chosen.getState();
-        //zmiana stanu
         tmp[0] = currentState;
         tmp[1] = currentPosition;
         return tmp;

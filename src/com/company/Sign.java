@@ -21,15 +21,11 @@ public class Sign {
     public void flipCurrent() {current = !current;}
 
     public String construct() {
-        String output = "";
-        output += '|';
+        String output = "|";
         if (current) {
-            output += "<q";
-            output += Main.stateAndPos[0];
-            output += ">";
+            output += "<q"+ Main.stateAndPos[0]+">";
         }
-        output += sign;
-        output += '|';
+        output += sign+'|';
         return output;
     }
 }

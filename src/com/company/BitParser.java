@@ -3,12 +3,10 @@ package com.company;
 import java.util.ArrayList;
 
 /**
- * Created by Barceli Maczewski on 2016-01-06.
+ * Created by Marceli Baczewski on 2016-01-06.
  */
 public class BitParser {
-    public BitParser(){
-
-    }
+    public BitParser(){}
     public int count(ArrayList<Sign> signs) {
         int count = 0;
         for (Sign b : signs) {
@@ -20,7 +18,7 @@ public class BitParser {
     }
 
     public String printBits(ArrayList<Sign> signs) {
-        String output = new String();
+        String output = "";
         for (Sign b : signs) {
             output += b.construct();
         }

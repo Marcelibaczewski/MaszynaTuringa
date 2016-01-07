@@ -7,7 +7,6 @@ public class Triple {
     private final int state;
     private final char sign;
     private final char direction;
-
     public Triple() {
         state = -1;
         sign = '-';
