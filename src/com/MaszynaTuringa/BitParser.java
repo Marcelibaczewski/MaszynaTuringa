@@ -1,4 +1,4 @@
-package com.company;
+package com.MaszynaTuringa;
 
 import java.util.ArrayList;
 

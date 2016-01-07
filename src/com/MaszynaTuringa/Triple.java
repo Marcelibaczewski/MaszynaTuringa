@@ -1,4 +1,4 @@
-package com.company;
+package com.MaszynaTuringa;
 
 /**
  * Created by Marceli Baczewski on 2016-01-06.
